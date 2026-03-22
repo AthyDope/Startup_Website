@@ -23,14 +23,15 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // close mobile menu on route change
     setMenuOpen(false);
   }, [location.pathname]);
 
+  const barClass = scrolled
+    ? 'bg-gradient-to-r from-[#0a0f24]/95 via-[#0c1536]/90 to-[#0a0f24]/95 backdrop-blur-2xl border-b border-white/10 shadow-[0_15px_50px_rgba(0,0,0,0.45)]'
+    : 'bg-gradient-to-r from-[#0a0f24]/70 via-[#0c1536]/65 to-[#0a0f24]/70 backdrop-blur-2xl border-b border-white/5 shadow-[0_12px_40px_rgba(0,0,0,0.3)]';
+
   return (
-    <nav
-      className={ixed top-0 left-0 right-0 z-50 transition-all duration-300 }
-    >
+    <nav className={ixed top-0 left-0 right-0 z-50 transition-all duration-300 }>
       <div className= max-w-7xl mx-auto px-6 flex items-center justify-between py-3>
         {/* Logo */}
         <Link to=/ className=flex items-center gap-3 no-underline group>
@@ -38,15 +39,15 @@ const Navbar = () => {
             <img src=/favicon.png alt=Quantam Solutions Logo className=h-[60px] w-auto object-contain />
             <div className=absolute inset-0 blur-xl bg-[#5cf0e6]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 />
           </div>
-          <span className=text-white font-semibold text-lg hidden sm:block tracking-tight flex items-center gap-2>
+          <span className=text-white font-semibold text-lg hidden sm:flex tracking-tight items-center gap-2>
             Quantam Solutions
             <span className=text-[11px] uppercase tracking-[0.2em] px-2 py-1 rounded-full bg-white/10 border border-white/10 text-[#5cf0e6]>Studio</span>
           </span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className=hidden md:flex items-center gap-2 px-2 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_12px_35px_rgba 0 0 0 0.35 ] >
-          <ul className= flex items-center gap-4 list-none m-0 p-0>
+        <div className=hidden md:flex items-center gap-3 px-2 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_12px_35px_rgba 0 0 0 0.35 ] >
+          <ul className= flex items-center gap-3 list-none m-0 p-0>
             {links.map(([path, label]) => {
               const active = location.pathname === path;
               return (
