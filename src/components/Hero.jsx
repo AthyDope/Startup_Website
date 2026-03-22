@@ -5,7 +5,7 @@ import Globe from './Globe';
 
 const Hero = () => {
   return (
-    <section className="relative bg-[#0A0F24] pt-32 pb-24 overflow-hidden mt-16 min-h-[90vh] flex items-center">
+    <section className="relative bg-[#050915] pt-32 pb-24 overflow-hidden mt-16 min-h-[90vh] flex items-center section-shell">
       
       {/* Abstract Animated Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen animate-fade-in duration-1000" />
@@ -38,7 +38,7 @@ const Hero = () => {
             <div className="flex gap-5 flex-wrap animate-fade-in-up delay-300">
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center bg-blue-600 text-white font-semibold px-8 py-3.5 rounded-xl overflow-hidden shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transition-all no-underline text-sm"
+                className="group relative inline-flex items-center justify-center pill-primary px-9 py-3.5 rounded-full overflow-hidden transition-all no-underline text-sm font-semibold shadow-[0_15px_30px_rgba(0,0,0,0.35)]"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative flex items-center gap-2">
@@ -49,7 +49,7 @@ const Hero = () => {
               
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center bg-transparent border border-white/20 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-white/5 hover:border-white/40 transition-all no-underline text-sm backdrop-blur-sm"
+                className="inline-flex items-center justify-center pill-secondary px-8 py-3.5 rounded-full hover:bg-white/10 transition-all no-underline text-sm font-semibold"
               >
                 Explore Services
               </Link>

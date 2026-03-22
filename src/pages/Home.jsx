@@ -193,14 +193,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#0A0F24] relative overflow-hidden">
+      <section className="py-24 bg-[#0A0F24] section-shell relative overflow-hidden">
         {/* Decorative Grid Removed */}
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle label="What We Do" title="Our Services" subtitle="Comprehensive enterprise IT solutions tailored to your business needs." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(({ icon, title, desc }, idx) => (
-              <div key={title} className={`bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300 group shadow-lg animate-fade-in-up`} style={{ animationDelay: `${(idx + 1) * 100}ms` }}>
+              <div key={title} className={`neon-panel rounded-3xl p-8 backdrop-blur-sm hover:-translate-y-2 transition-all duration-300 group animate-fade-in-up`} style={{ animationDelay: `${(idx + 1) * 100}ms` }}>
                 <div className="w-14 h-14 bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 transition-all shadow-[0_0_15px_rgba(37,99,235,0.1)] group-hover:shadow-[0_0_25px_rgba(37,99,235,0.3)]">{icon || "⚡"}</div>
                 <h3 className="text-white font-bold text-xl mb-3">{title}</h3>
                 <p className="text-slate-400 leading-relaxed text-sm">{desc}</p>
@@ -210,12 +210,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#0B1229] border-t border-white/5">
+      <section className="py-24 bg-[#0B1229] section-shell border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle label="Our Edge" title="Why Choose Us" subtitle="We go beyond code, building strategic partnerships that last." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyUs.map(({ icon, title, desc }, idx) => (
-              <div key={title} className="text-center p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/5 hover:border-white/10 transition-all group animate-fade-in-up" style={{ animationDelay: `${(idx + 1) * 100}ms` }}>
+              <div key={title} className="text-center neon-panel p-8 rounded-3xl hover:-translate-y-2 transition-all group animate-fade-in-up" style={{ animationDelay: `${(idx + 1) * 100}ms` }}>
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-300 text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(37,99,235,0.15)]">{icon || "🛡️"}</div>
                 <h3 className="text-white font-bold text-lg mb-3">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
@@ -225,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-24 bg-[#0A0F24] overflow-hidden">
+      <section className="relative py-24 bg-[#0A0F24] section-shell section-shell overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-fade-in duration-1000" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle label="Tech Stack" title="Technologies We Use" subtitle="Modern, battle-tested technologies for highly reliable digital solutions." />
@@ -256,12 +256,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#0B1229] border-t border-white/5">
+      <section className="py-24 bg-[#0B1229] section-shell border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle label="Our Work" title="Featured Projects" subtitle="A glimpse of our recent work and enterprise-grade delivered solutions." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map(({ gradient, title, desc, tag }, idx) => (
-              <div key={title} className="bg-white/5 rounded-3xl overflow-hidden border border-white/10 shadow-lg hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:border-white/20 transition-all group animate-fade-in-up" style={{ animationDelay: `${(idx + 1) * 150}ms` }}>
+              <div key={title} className="neon-panel rounded-3xl overflow-hidden hover:-translate-y-2 transition-all group animate-fade-in-up" style={{ animationDelay: `${(idx + 1) * 150}ms` }}>
                 <div className={`h-56 bg-gradient-to-br ${gradient} flex items-center justify-center relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                   <div className="w-32 h-24 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-md flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform duration-500">
@@ -285,7 +285,7 @@ export default function Home() {
           <SectionTitle label="Testimonials" title="What Our Clients Say" subtitle="Don't just take our word for it—hear from the enterprises we've transformed." />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12">
             {testimonials.map(({ quote, name, role, avatar }, idx) => (
-              <div key={name} className="bg-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/10 shadow-2xl relative hover:bg-white/10 transition-colors animate-scale-in" style={{ animationDelay: `${(idx + 1) * 200}ms` }}>
+              <div key={name} className="neon-panel backdrop-blur-xl rounded-3xl p-10 shadow-2xl relative hover:-translate-y-2 transition-all animate-scale-in" style={{ animationDelay: `${(idx + 1) * 200}ms` }}>
                 <div className="absolute text-6xl text-blue-500/20 top-6 left-8 font-serif leading-none">"</div>
                 <p className="text-slate-300 text-base leading-relaxed italic mb-8 relative z-10 pt-4">"{quote}"</p>
                 <div className="flex items-center gap-4 border-t border-white/10 pt-6">
@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-32 bg-[#0B1229] border-t border-white/5 overflow-hidden">
+      <section className="relative py-32 bg-[#0B1229] section-shell border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-indigo-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[10rem] bg-blue-500/30 rounded-full blur-[100px] pointer-events-none animate-fade-in" />
         

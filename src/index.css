@@ -1,57 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-1: #050915;
+  --bg-2: #0b1229;
+  --bg-3: #081020;
+  --accent: #5cf0e6;
+  --accent-2: #8c6fff;
+  --text-primary: #e8ecf5;
+  --text-secondary: #9fb3d1;
+}
+
 @layer base {
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
-    color: #e5e7eb;
-    background: #070d1c;
+    font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background:
+      radial-gradient(1200px circle at 20% 10%, rgba(92, 240, 230, 0.12), transparent 45%),
+      radial-gradient(1000px circle at 80% 20%, rgba(140, 111, 255, 0.18), transparent 40%),
+      linear-gradient(140deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-1) 100%);
+    background-color: var(--bg-1);
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 120px 120px;
+    opacity: 0.35;
+    mix-blend-mode: screen;
   }
 }
 
 @layer utilities {
-  .hero-wave {
-    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 60%);
-  }
-  .tech-wave {
-    clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 100%);
-  }
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-  }
-  .animate-scale-in {
-    animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-  @keyframes scaleIn {
-    to { opacity: 1; transform: scale(1); }
-  }
+  .hero-wave { clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 60%); }
+  .tech-wave { clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 100%); }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+  .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(30px); }
+  .animate-fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+  .animate-scale-in { animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: scale(0.95); }
+  @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes scaleIn { to { opacity: 1; transform: scale(1); } }
   .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
   .delay-300 { animation-delay: 300ms; }
@@ -59,6 +60,54 @@
   .delay-500 { animation-delay: 500ms; }
   .delay-600 { animation-delay: 600ms; }
   .delay-700 { animation-delay: 700ms; }
+
+  .section-shell {
+    position: relative;
+    overflow: hidden;
+  }
+  .section-shell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(800px circle at 90% 10%, rgba(92,240,230,0.08), transparent 55%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .neon-panel {
+    position: relative;
+    background: linear-gradient(145deg, rgba(17,28,55,0.92), rgba(10,16,36,0.92));
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35), 0 0 0 1px rgba(92,240,230,0.05);
+    overflow: hidden;
+  }
+  .neon-panel::before {
+    content: '';
+    position: absolute;
+    inset: -40% 45% auto -40%;
+    height: 40%;
+    background: linear-gradient(120deg, rgba(92,240,230,0.15), rgba(140,111,255,0));
+    transform: rotate(-6deg);
+    pointer-events: none;
+  }
+  .neon-panel::after {
+    content: '';
+    position: absolute;
+    inset: auto 5% 6% 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(92,240,230,0.4), transparent);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .pill-primary {
+    background: linear-gradient(120deg, #5cf0e6, #7c5bff);
+    color: #050915;
+    box-shadow: 0 10px 30px rgba(92,240,230,0.25), 0 10px 40px rgba(124,91,255,0.25);
+  }
+  .pill-secondary {
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.04);
+    color: var(--text-primary);
+  }
 }
-
-
