@@ -9,8 +9,8 @@
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
-    color: #111827;
-    background: #ffffff;
+    color: #e5e7eb;
+    background: #070d1c;
     -webkit-font-smoothing: antialiased;
   }
 }

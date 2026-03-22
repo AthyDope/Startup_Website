@@ -11,7 +11,7 @@ const socials = [
 ];
 
 const Footer = () => (
-  <footer className="relative bg-[#070d1c] text-slate-300 overflow-hidden border-t border-white/5 mt-24">
+  <footer className="relative bg-[#070d1c] text-slate-300 overflow-hidden border-t border-white/5 pt-24">
     {/* background glows */}
     <div className="absolute -top-32 -left-10 w-80 h-80 bg-blue-600/15 rounded-full blur-[120px]" />
     <div className="absolute -bottom-40 right-0 w-[28rem] h-[28rem] bg-indigo-600/15 rounded-full blur-[140px]" />
